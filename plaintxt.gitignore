@@ -1,0 +1,32 @@
+# --- Python 缓存 ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# --- 虚拟环境 (如果你用了 venv 或 conda) ---
+.venv/
+env/
+venv/
+ENV/
+
+# --- 实验原始数据 (强烈建议忽略，防止误传科研敏感数据) ---
+*.csv
+*.xlsx
+*.xls
+*.dat
+*.nc
+*.txt
+# 如果你想保留某些说明文档，可以用感叹号排除：
+!README.txt
+
+# --- 运行结果/图片 ---
+results/
+figures/
+*.png
+*.pdf
+
+# --- IDE 配置文件 (比如 PyCharm 或 VS Code) ---
+.idea/
+.vscode/
+.DS_Store
