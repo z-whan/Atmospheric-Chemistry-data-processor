@@ -219,7 +219,10 @@ def generate_ptr_figure_from_data(x_data, data_df, left_cols, right_cols, x_labe
         ax1.xaxis.set_major_formatter(mdates.DateFormatter('%H:00'))
 
         ymin1, ymax1 = ax1.get_ylim()
-        ax1.set_ylim(ymin1, ymax1 + (ymax1 - ymin1) * 0.18)
+        if text_info and text_info[0] and text_info[1].strip():
+            ax1.set_ylim(ymin1, ymax1 + (ymax1 - ymin1) * 0.18)
+        else:
+            ax1.set_ylim(ymin1, ymax1)
         ymin2, ymax2 = ax2.get_ylim()
         ax2.set_ylim(ymin2, ymax2 + (ymax2 - ymin2) * 0.18)
 
