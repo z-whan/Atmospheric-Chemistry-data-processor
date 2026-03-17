@@ -1,2 +1,22 @@
-# Atmospheric-Chemistry-data-processor
-A Python tool for the convenient processing of data results from Scanning Mobility Particle Sizers (SMPS), Proton-Transfer-Reaction Mass Spectrometry (PTR-MS), and Fourier-Transform Infrared Spectroscopy (FTIR).
+# 科学数据可视化终端 (Advanced Data Visualization Terminal)
+
+欢迎使用本软件！这是一个专为 SMPS、PTR 和 FTIR 数据清洗、分析与可视化打造的集成工具。
+
+## 📊 模块说明
+
+### 1. SMPS (扫描电迁移率颗粒物粒径谱仪)
+- **功能**：绘制颗粒物质量浓度时间序列图，并支持计算特定时间段内的总采样质量。
+- **密度设置**：在顶部输入框设置颗粒物密度（默认 1.30 g/cm³），该数值将全局应用于图像坐标轴与质量积分计算。
+- **积分计算**：在底部输入流速（L/min）与起止时间（HH:MM），点击 Calculate 即可获得精确的总采样质量（μg），结果可选中复制。
+
+### 2. PTR (质子转移反应质谱仪)
+- **功能**：支持双 Y 轴绘图，自动剔除无效数据。
+- **前体物选择**：导入数据后，程序会弹出包含各物质最大浓度的列表。勾选的物质将作为前体物绘制在右侧加粗 Y 轴上。
+
+### 3. FTIR (傅里叶变换红外光谱仪)
+- **功能**：智能读取带乘数的复杂数据结构，自动过滤无效表头与干扰气体（如 H2O, CO2）。
+- **坐标轴联动**：勾选右轴物质后，X/Y轴标题会自动更新为对应的物质名称。
+
+## 💡 使用小贴士
+1. **自定义文本换行**：在坐标轴标签输入框中，输入 `\n` 即可实现换行。
+2. **图表保存**：点击 `Save Plot (.png)`，图片会自动以原数据的名字保存在同一目录下，且分辨率高达 300dpi，满足期刊发表要求。
