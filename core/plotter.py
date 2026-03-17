@@ -61,7 +61,10 @@ def generate_smps_figure(filepath, x_label, y_label, text_info=None, density=1.3
         ax.xaxis.set_major_formatter(mdates.DateFormatter('%H:00'))
 
         ymin, ymax = ax.get_ylim()
-        ax.set_ylim(ymin, ymax + (ymax - ymin) * 0.18) 
+        if text_info and text_info[0] and text_info[1].strip():
+            ax.set_ylim(ymin, ymax + (ymax - ymin) * 0.18)
+        else:
+            ax.set_ylim(ymin, ymax) 
         
         # 动态应用字体大小
         ax.set_xlabel(x_label.replace('\\n', '\n'), fontsize=font_size, fontweight='bold')
