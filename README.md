@@ -33,8 +33,8 @@
 ### 安装步骤
 1. **克隆项目**:
    ```bash
-   git clone https://github.com/your-repo/DataProcessor.git
-   cd DataProcessor
+   git clone https://github.com/z-whan/Atmospheric-Chemistry-data-processor.git
+   cd Atmospheric-Chemistry-data-processor
    ```
 
 2. **创建虚拟环境** (推荐):
@@ -120,6 +120,123 @@ DataProcessor/
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
 
-## 📞 联系
+---
+
+# Advanced Data Visualization Terminal (科学数据可视化终端)
+
+A desktop application designed for atmospheric science data analysis, supporting visualization and calculation of SMPS, PTR, and FTIR data. Features a modern GUI interface to help researchers quickly generate high-quality scientific figures.
+
+## ✨ Features
+
+### 📊 Data Visualization
+- **SMPS (Scanning Mobility Particle Sizer)**: Plot particle mass concentration time series with customizable density settings and mass integration calculations.
+- **PTR (Proton Transfer Reaction Mass Spectrometry)**: Dual Y-axis plotting with automatic invalid data removal and precursor selection support.
+- **FTIR (Fourier Transform Infrared Spectroscopy)**: Intelligent complex data structure parsing with automatic interfering gas filtering and multiplier application.
+
+### 🛠️ Advanced Features
+- Customizable axis labels and font sizes
+- Add text annotations to plots
+- High-resolution PNG export (300dpi) suitable for journal publication
+- Real-time preview and save functionality
+- Mass integration calculator (SMPS)
+
+### 🎨 User Interface
+- Modern dark theme interface
+- Tab-based layout for easy data type switching
+- Responsive design with window resizing support
+
+## 🚀 Installation & Setup
+
+### System Requirements
+- Python 3.8 or higher
+- macOS / Windows / Linux
+
+### Installation Steps
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/z-whan/Atmospheric-Chemistry-data-processor.git
+   cd Atmospheric-Chemistry-data-processor
+   ```
+
+2. **Create virtual environment** (recommended):
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # macOS/Linux
+   # or venv\Scripts\activate  # Windows
+   ```
+
+3. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   Key packages:
+   - `customtkinter` - Modern GUI framework
+   - `pandas` - Data processing
+   - `matplotlib` - Chart plotting
+   - `numpy` - Numerical computation
+   - `openpyxl` - Excel file reading
+
+4. **Run the application**:
+   ```bash
+   python main.py
+   ```
+
+## 📖 User Guide
+
+### Basic Operation
+1. After launching, select the appropriate tab (SMPS / PTR / FTIR)
+2. Click "Select Excel File" to choose your data file (.xlsx format)
+3. Configure parameters (density, axis labels, etc.)
+4. Click "Preview Plot" to preview the figure
+5. If satisfied, click "Save Plot (.png)" to save
+
+### Data Format Requirements
+- **SMPS**: Excel file containing "Start Time" and "Total Conc." columns
+- **PTR**: Contains "AbsTime" column and substance columns starting with 'm'
+- **FTIR**: Contains "Local Time" header row, multipliers in second row, data from third row onwards
+
+### Advanced Settings
+- **Custom Labels**: Check "Custom X/Y-Axis Label" and enter text
+- **Text Annotation**: Check "Add text on top-left" to add plot notes
+- **Line Breaks**: Use `\n` in labels to implement line breaks
+- **Mass Calculation**: Enter flow rate and time range in SMPS tab to calculate total mass
+
+## 📁 Project Structure
+
+```
+Atmospheric-Chemistry-data-processor/
+├── main.py                 # Application entry point
+├── README.md               # Project documentation
+├── requirements.txt        # Python dependencies
+├── core/
+│   └── plotter.py          # Core data processing and plotting logic
+└── ui/
+    └── main_window.py      # GUI main window and interface logic
+```
+
+## 🐛 Troubleshooting
+
+### Common Issues
+- **File read failure**: Ensure Excel file is not open in other programs and format is correct
+- **No data displayed**: Check if column names match expected format
+- **Dependency installation failed**: Upgrade pip (`pip install --upgrade pip`) or use conda
+
+### Error Reporting
+If you encounter issues, check terminal output or error messages within the application.
+
+## 🤝 Contributing
+
+Issues and Pull Requests are welcome!
+
+1. Fork this repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
