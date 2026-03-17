@@ -1,3 +1,6 @@
+**⚠️ Attention：此项目暂未经过检查，上传内容有待完善**
+
+
 # 科学数据可视化终端 (Advanced Data Visualization Terminal)
 
 一个专为大气科学数据分析设计的桌面应用程序，支持 SMPS、PTR 和 FTIR 数据的清洗、可视化和计算。使用现代化的 GUI 界面，帮助科研人员快速生成高质量的科学图表。
